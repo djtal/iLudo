@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DEB85E1913F1A3E300FA0371 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1813F1A3E300FA0371 /* UIKit.framework */; };
+		DEB85E1B13F1A3E300FA0371 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1A13F1A3E300FA0371 /* Foundation.framework */; };
+		DEB85E1D13F1A3E300FA0371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1C13F1A3E300FA0371 /* CoreGraphics.framework */; };
+		DEB85E1F13F1A3E300FA0371 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1E13F1A3E300FA0371 /* CoreData.framework */; };
+		DEB85E2513F1A3E300FA0371 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E2313F1A3E300FA0371 /* InfoPlist.strings */; };
+		DEB85E2713F1A3E300FA0371 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E2613F1A3E300FA0371 /* main.m */; };
+		DEB85E2B13F1A3E300FA0371 /* iLudoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E2A13F1A3E300FA0371 /* iLudoAppDelegate.m */; };
+		DEB85E2E13F1A3E300FA0371 /* iLudo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E2C13F1A3E300FA0371 /* iLudo.xcdatamodeld */; };
+		DEB85E3113F1A3E300FA0371 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E2F13F1A3E300FA0371 /* MainWindow.xib */; };
+		DEB85E3413F1A3E300FA0371 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E3313F1A3E300FA0371 /* RootViewController.m */; };
+		DEB85E3713F1A3E300FA0371 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E3513F1A3E300FA0371 /* RootViewController.xib */; };
+		DEB85E3F13F1A3E300FA0371 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E3E13F1A3E300FA0371 /* SenTestingKit.framework */; };
+		DEB85E4013F1A3E300FA0371 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1813F1A3E300FA0371 /* UIKit.framework */; };
+		DEB85E4113F1A3E300FA0371 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1A13F1A3E300FA0371 /* Foundation.framework */; };
+		DEB85E4213F1A3E300FA0371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1C13F1A3E300FA0371 /* CoreGraphics.framework */; };
+		DEB85E4313F1A3E300FA0371 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB85E1E13F1A3E300FA0371 /* CoreData.framework */; };
+		DEB85E4B13F1A3E300FA0371 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E4913F1A3E300FA0371 /* InfoPlist.strings */; };
+		DEB85E4D13F1A3E300FA0371 /* iLudoTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E4C13F1A3E300FA0371 /* iLudoTests.h */; };
+		DEB85E4F13F1A3E300FA0371 /* iLudoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E4E13F1A3E300FA0371 /* iLudoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEB85E4413F1A3E300FA0371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEB85E0B13F1A3E200FA0371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEB85E1313F1A3E300FA0371;
+			remoteInfo = iLudo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DEB85E1413F1A3E300FA0371 /* iLudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB85E1813F1A3E300FA0371 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DEB85E1A13F1A3E300FA0371 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DEB85E1C13F1A3E300FA0371 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DEB85E1E13F1A3E300FA0371 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DEB85E2213F1A3E300FA0371 /* iLudo-Info.plist */ = {isa = PBXFileReference; path = "iLudo-Info.plist"; sourceTree = "<group>"; };
+		DEB85E2413F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEB85E2613F1A3E300FA0371 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEB85E2813F1A3E300FA0371 /* iLudo-Prefix.pch */ = {isa = PBXFileReference; path = "iLudo-Prefix.pch"; sourceTree = "<group>"; };
+		DEB85E2913F1A3E300FA0371 /* iLudoAppDelegate.h */ = {isa = PBXFileReference; path = iLudoAppDelegate.h; sourceTree = "<group>"; };
+		DEB85E2A13F1A3E300FA0371 /* iLudoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLudoAppDelegate.m; sourceTree = "<group>"; };
+		DEB85E2D13F1A3E300FA0371 /* iLudo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iLudo.xcdatamodel; sourceTree = "<group>"; };
+		DEB85E3013F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		DEB85E3213F1A3E300FA0371 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		DEB85E3313F1A3E300FA0371 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		DEB85E3613F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		DEB85E3D13F1A3E300FA0371 /* iLudoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLudoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB85E3E13F1A3E300FA0371 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DEB85E4813F1A3E300FA0371 /* iLudoTests-Info.plist */ = {isa = PBXFileReference; path = "iLudoTests-Info.plist"; sourceTree = "<group>"; };
+		DEB85E4A13F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEB85E4C13F1A3E300FA0371 /* iLudoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iLudoTests.h; sourceTree = "<group>"; };
+		DEB85E4E13F1A3E300FA0371 /* iLudoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLudoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEB85E1113F1A3E300FA0371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB85E1913F1A3E300FA0371 /* UIKit.framework in Frameworks */,
+				DEB85E1B13F1A3E300FA0371 /* Foundation.framework in Frameworks */,
+				DEB85E1D13F1A3E300FA0371 /* CoreGraphics.framework in Frameworks */,
+				DEB85E1F13F1A3E300FA0371 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEB85E3913F1A3E300FA0371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB85E3F13F1A3E300FA0371 /* SenTestingKit.framework in Frameworks */,
+				DEB85E4013F1A3E300FA0371 /* UIKit.framework in Frameworks */,
+				DEB85E4113F1A3E300FA0371 /* Foundation.framework in Frameworks */,
+				DEB85E4213F1A3E300FA0371 /* CoreGraphics.framework in Frameworks */,
+				DEB85E4313F1A3E300FA0371 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DEB85E0913F1A3E200FA0371 = {
+			isa = PBXGroup;
+			children = (
+				DEB85E2013F1A3E300FA0371 /* iLudo */,
+				DEB85E4613F1A3E300FA0371 /* iLudoTests */,
+				DEB85E1713F1A3E300FA0371 /* Frameworks */,
+				DEB85E1513F1A3E300FA0371 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DEB85E1513F1A3E300FA0371 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEB85E1413F1A3E300FA0371 /* iLudo.app */,
+				DEB85E3D13F1A3E300FA0371 /* iLudoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEB85E1713F1A3E300FA0371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEB85E1813F1A3E300FA0371 /* UIKit.framework */,
+				DEB85E1A13F1A3E300FA0371 /* Foundation.framework */,
+				DEB85E1C13F1A3E300FA0371 /* CoreGraphics.framework */,
+				DEB85E1E13F1A3E300FA0371 /* CoreData.framework */,
+				DEB85E3E13F1A3E300FA0371 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEB85E2013F1A3E300FA0371 /* iLudo */ = {
+			isa = PBXGroup;
+			children = (
+				DEB85E2913F1A3E300FA0371 /* iLudoAppDelegate.h */,
+				DEB85E2A13F1A3E300FA0371 /* iLudoAppDelegate.m */,
+				DEB85E2F13F1A3E300FA0371 /* MainWindow.xib */,
+				DEB85E3213F1A3E300FA0371 /* RootViewController.h */,
+				DEB85E3313F1A3E300FA0371 /* RootViewController.m */,
+				DEB85E3513F1A3E300FA0371 /* RootViewController.xib */,
+				DEB85E2C13F1A3E300FA0371 /* iLudo.xcdatamodeld */,
+				DEB85E2113F1A3E300FA0371 /* Supporting Files */,
+			);
+			path = iLudo;
+			sourceTree = "<group>";
+		};
+		DEB85E2113F1A3E300FA0371 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEB85E2213F1A3E300FA0371 /* iLudo-Info.plist */,
+				DEB85E2313F1A3E300FA0371 /* InfoPlist.strings */,
+				DEB85E2613F1A3E300FA0371 /* main.m */,
+				DEB85E2813F1A3E300FA0371 /* iLudo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEB85E4613F1A3E300FA0371 /* iLudoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DEB85E4C13F1A3E300FA0371 /* iLudoTests.h */,
+				DEB85E4E13F1A3E300FA0371 /* iLudoTests.m */,
+				DEB85E4713F1A3E300FA0371 /* Supporting Files */,
+			);
+			path = iLudoTests;
+			sourceTree = "<group>";
+		};
+		DEB85E4713F1A3E300FA0371 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEB85E4813F1A3E300FA0371 /* iLudoTests-Info.plist */,
+				DEB85E4913F1A3E300FA0371 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEB85E1313F1A3E300FA0371 /* iLudo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEB85E5213F1A3E300FA0371 /* Build configuration list for PBXNativeTarget "iLudo" */;
+			buildPhases = (
+				DEB85E1013F1A3E300FA0371 /* Sources */,
+				DEB85E1113F1A3E300FA0371 /* Frameworks */,
+				DEB85E1213F1A3E300FA0371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iLudo;
+			productName = iLudo;
+			productReference = DEB85E1413F1A3E300FA0371 /* iLudo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DEB85E3C13F1A3E300FA0371 /* iLudoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEB85E5513F1A3E300FA0371 /* Build configuration list for PBXNativeTarget "iLudoTests" */;
+			buildPhases = (
+				DEB85E3813F1A3E300FA0371 /* Sources */,
+				DEB85E3913F1A3E300FA0371 /* Frameworks */,
+				DEB85E3A13F1A3E300FA0371 /* Resources */,
+				DEB85E3B13F1A3E300FA0371 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEB85E4513F1A3E300FA0371 /* PBXTargetDependency */,
+			);
+			name = iLudoTests;
+			productName = iLudoTests;
+			productReference = DEB85E3D13F1A3E300FA0371 /* iLudoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEB85E0B13F1A3E200FA0371 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = DEB85E0E13F1A3E200FA0371 /* Build configuration list for PBXProject "iLudo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DEB85E0913F1A3E200FA0371;
+			productRefGroup = DEB85E1513F1A3E300FA0371 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEB85E1313F1A3E300FA0371 /* iLudo */,
+				DEB85E3C13F1A3E300FA0371 /* iLudoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEB85E1213F1A3E300FA0371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB85E2513F1A3E300FA0371 /* InfoPlist.strings in Resources */,
+				DEB85E3113F1A3E300FA0371 /* MainWindow.xib in Resources */,
+				DEB85E3713F1A3E300FA0371 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEB85E3A13F1A3E300FA0371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB85E4B13F1A3E300FA0371 /* InfoPlist.strings in Resources */,
+				DEB85E4D13F1A3E300FA0371 /* iLudoTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DEB85E3B13F1A3E300FA0371 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEB85E1013F1A3E300FA0371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB85E2713F1A3E300FA0371 /* main.m in Sources */,
+				DEB85E2B13F1A3E300FA0371 /* iLudoAppDelegate.m in Sources */,
+				DEB85E2E13F1A3E300FA0371 /* iLudo.xcdatamodeld in Sources */,
+				DEB85E3413F1A3E300FA0371 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEB85E3813F1A3E300FA0371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB85E4F13F1A3E300FA0371 /* iLudoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEB85E4513F1A3E300FA0371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEB85E1313F1A3E300FA0371 /* iLudo */;
+			targetProxy = DEB85E4413F1A3E300FA0371 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DEB85E2313F1A3E300FA0371 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB85E2413F1A3E300FA0371 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DEB85E2F13F1A3E300FA0371 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB85E3013F1A3E300FA0371 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		DEB85E3513F1A3E300FA0371 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB85E3613F1A3E300FA0371 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		DEB85E4913F1A3E300FA0371 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB85E4A13F1A3E300FA0371 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEB85E5013F1A3E300FA0371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DEB85E5113F1A3E300FA0371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEB85E5313F1A3E300FA0371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLudo/iLudo-Prefix.pch";
+				INFOPLIST_FILE = "iLudo/iLudo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DEB85E5413F1A3E300FA0371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLudo/iLudo-Prefix.pch";
+				INFOPLIST_FILE = "iLudo/iLudo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DEB85E5613F1A3E300FA0371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iLudo.app/iLudo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLudo/iLudo-Prefix.pch";
+				INFOPLIST_FILE = "iLudoTests/iLudoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DEB85E5713F1A3E300FA0371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iLudo.app/iLudo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLudo/iLudo-Prefix.pch";
+				INFOPLIST_FILE = "iLudoTests/iLudoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEB85E0E13F1A3E200FA0371 /* Build configuration list for PBXProject "iLudo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB85E5013F1A3E300FA0371 /* Debug */,
+				DEB85E5113F1A3E300FA0371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEB85E5213F1A3E300FA0371 /* Build configuration list for PBXNativeTarget "iLudo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB85E5313F1A3E300FA0371 /* Debug */,
+				DEB85E5413F1A3E300FA0371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DEB85E5513F1A3E300FA0371 /* Build configuration list for PBXNativeTarget "iLudoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB85E5613F1A3E300FA0371 /* Debug */,
+				DEB85E5713F1A3E300FA0371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DEB85E2C13F1A3E300FA0371 /* iLudo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DEB85E2D13F1A3E300FA0371 /* iLudo.xcdatamodel */,
+			);
+			currentVersion = DEB85E2D13F1A3E300FA0371 /* iLudo.xcdatamodel */;
+			path = iLudo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DEB85E0B13F1A3E200FA0371 /* Project object */;
+}
