@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Les Jeux";
     // Set up the edit and add buttons.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -48,6 +49,7 @@
 {
 	[super viewDidDisappear:animated];
 }
+
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -77,6 +79,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     // Configure the cell.
@@ -131,6 +134,9 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 	*/
+    Game *aGame = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.gameEditController setCurrentGame:aGame];
+    [self.navigationController pushViewController:self.gameEditController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

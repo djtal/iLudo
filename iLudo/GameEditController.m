@@ -50,14 +50,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    if (curGame)
-    {
-        gameNameTF.text = curGame.name;
-        gameMinPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.min_player];
-        gameMaxPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.max_player];        
-    }
-        
+    // Do any additional setup after loading the view from its nib. 
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveGame:)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    [doneButton release];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelGame:)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    [cancelButton release];
+    
 }
 
 - (void)viewDidUnload
@@ -67,13 +68,52 @@
     // e.g. self.myOutlet = nil;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self updateInterfaceForCurrentPerson];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField*)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 #pragma mark - Custom Methods
+
+- (IBAction)saveGame:(id)sender{
+    curGame.name = gameNameTF.text;
+    
+    NSError *anyError = nil;
+    BOOL success = [[curGame managedObjectContext] save:&anyError];
+    if (!success) {
+        NSLog(@"Error saving %@", anyError);
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:[anyError localizedDescription] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [errorAlert show];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (IBAction)cancelGame:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)updateInterfaceForCurrentPerson{
+    gameNameTF.text = curGame.name;
+    gameMinPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.min_player];
+    gameMaxPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.max_player];    
+}
 
 -(void)setCurrentGame:(Game*)aGame{
     if (!aGame) {

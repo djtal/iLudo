@@ -28,10 +28,11 @@
 @property (nonatomic, retain) IBOutlet UITextField *gameMinPlayerTF;
 @property (nonatomic, retain) IBOutlet UITextField *gameMaxPlayer;
 
-@property (nonatomic, retain) Game *currentGame;
+@property (nonatomic, retain) Game *curGame;
 
 @property (nonatomic, retain) NSManagedObjectContext *editingContext;
 
 
 - (id)iniWithPrimaryManagedObjectContext:(NSManagedObjectContext*)primaryMOC;
+- (void)updateInterfaceForCurrentPerson;
 @end
