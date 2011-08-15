@@ -26,6 +26,9 @@
 		DEB85E4B13F1A3E300FA0371 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E4913F1A3E300FA0371 /* InfoPlist.strings */; };
 		DEB85E4D13F1A3E300FA0371 /* iLudoTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E4C13F1A3E300FA0371 /* iLudoTests.h */; };
 		DEB85E4F13F1A3E300FA0371 /* iLudoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E4E13F1A3E300FA0371 /* iLudoTests.m */; };
+		DEB85E5B13F1A76900FA0371 /* GameEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E5913F1A76900FA0371 /* GameEditController.m */; };
+		DEB85E5C13F1A76900FA0371 /* GameEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB85E5A13F1A76900FA0371 /* GameEditController.xib */; };
+		DEB85E5F13F1AC2B00FA0371 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB85E5E13F1AC2B00FA0371 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,23 +47,28 @@
 		DEB85E1A13F1A3E300FA0371 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEB85E1C13F1A3E300FA0371 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DEB85E1E13F1A3E300FA0371 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		DEB85E2213F1A3E300FA0371 /* iLudo-Info.plist */ = {isa = PBXFileReference; path = "iLudo-Info.plist"; sourceTree = "<group>"; };
+		DEB85E2213F1A3E300FA0371 /* iLudo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iLudo-Info.plist"; sourceTree = "<group>"; };
 		DEB85E2413F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DEB85E2613F1A3E300FA0371 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DEB85E2813F1A3E300FA0371 /* iLudo-Prefix.pch */ = {isa = PBXFileReference; path = "iLudo-Prefix.pch"; sourceTree = "<group>"; };
-		DEB85E2913F1A3E300FA0371 /* iLudoAppDelegate.h */ = {isa = PBXFileReference; path = iLudoAppDelegate.h; sourceTree = "<group>"; };
+		DEB85E2813F1A3E300FA0371 /* iLudo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iLudo-Prefix.pch"; sourceTree = "<group>"; };
+		DEB85E2913F1A3E300FA0371 /* iLudoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iLudoAppDelegate.h; sourceTree = "<group>"; };
 		DEB85E2A13F1A3E300FA0371 /* iLudoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLudoAppDelegate.m; sourceTree = "<group>"; };
 		DEB85E2D13F1A3E300FA0371 /* iLudo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iLudo.xcdatamodel; sourceTree = "<group>"; };
 		DEB85E3013F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		DEB85E3213F1A3E300FA0371 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		DEB85E3213F1A3E300FA0371 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DEB85E3313F1A3E300FA0371 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		DEB85E3613F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		DEB85E3D13F1A3E300FA0371 /* iLudoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLudoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB85E3E13F1A3E300FA0371 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DEB85E4813F1A3E300FA0371 /* iLudoTests-Info.plist */ = {isa = PBXFileReference; path = "iLudoTests-Info.plist"; sourceTree = "<group>"; };
+		DEB85E4813F1A3E300FA0371 /* iLudoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iLudoTests-Info.plist"; sourceTree = "<group>"; };
 		DEB85E4A13F1A3E300FA0371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DEB85E4C13F1A3E300FA0371 /* iLudoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iLudoTests.h; sourceTree = "<group>"; };
 		DEB85E4E13F1A3E300FA0371 /* iLudoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLudoTests.m; sourceTree = "<group>"; };
+		DEB85E5813F1A76900FA0371 /* GameEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEditController.h; sourceTree = "<group>"; };
+		DEB85E5913F1A76900FA0371 /* GameEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEditController.m; sourceTree = "<group>"; };
+		DEB85E5A13F1A76900FA0371 /* GameEditController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameEditController.xib; sourceTree = "<group>"; };
+		DEB85E5D13F1AC2B00FA0371 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		DEB85E5E13F1AC2B00FA0371 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,9 @@
 		DEB85E2013F1A3E300FA0371 /* iLudo */ = {
 			isa = PBXGroup;
 			children = (
+				DEB85E5813F1A76900FA0371 /* GameEditController.h */,
+				DEB85E5913F1A76900FA0371 /* GameEditController.m */,
+				DEB85E5A13F1A76900FA0371 /* GameEditController.xib */,
 				DEB85E2913F1A3E300FA0371 /* iLudoAppDelegate.h */,
 				DEB85E2A13F1A3E300FA0371 /* iLudoAppDelegate.m */,
 				DEB85E2F13F1A3E300FA0371 /* MainWindow.xib */,
@@ -131,6 +142,8 @@
 				DEB85E3313F1A3E300FA0371 /* RootViewController.m */,
 				DEB85E3513F1A3E300FA0371 /* RootViewController.xib */,
 				DEB85E2C13F1A3E300FA0371 /* iLudo.xcdatamodeld */,
+				DEB85E5D13F1AC2B00FA0371 /* Game.h */,
+				DEB85E5E13F1AC2B00FA0371 /* Game.m */,
 				DEB85E2113F1A3E300FA0371 /* Supporting Files */,
 			);
 			path = iLudo;
@@ -236,6 +249,7 @@
 				DEB85E2513F1A3E300FA0371 /* InfoPlist.strings in Resources */,
 				DEB85E3113F1A3E300FA0371 /* MainWindow.xib in Resources */,
 				DEB85E3713F1A3E300FA0371 /* RootViewController.xib in Resources */,
+				DEB85E5C13F1A76900FA0371 /* GameEditController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +289,8 @@
 				DEB85E2B13F1A3E300FA0371 /* iLudoAppDelegate.m in Sources */,
 				DEB85E2E13F1A3E300FA0371 /* iLudo.xcdatamodeld in Sources */,
 				DEB85E3413F1A3E300FA0371 /* RootViewController.m in Sources */,
+				DEB85E5B13F1A76900FA0371 /* GameEditController.m in Sources */,
+				DEB85E5F13F1AC2B00FA0371 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +466,7 @@
 				DEB85E5413F1A3E300FA0371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEB85E5513F1A3E300FA0371 /* Build configuration list for PBXNativeTarget "iLudoTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +475,7 @@
 				DEB85E5713F1A3E300FA0371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
