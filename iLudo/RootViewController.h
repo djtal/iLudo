@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <CoreData/CoreData.h>
+#import "GameEditController.h"
 
-@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@class GameEditController;
+
+@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+    GameEditController *gameEditController;
+}
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (readonly, retain) GameEditController *gameEditController;
+
+- (void)addNewGame;
 
 @end

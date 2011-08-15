@@ -15,6 +15,8 @@
 @synthesize gameMaxPlayer;
 @synthesize gameMinPlayerTF;
 @synthesize gameDescriptionTF;
+@synthesize editingContext;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -24,6 +26,15 @@
         // Custom initialization
     }
     return self;
+}
+
+-(id)iniWithPrimaryManagedObjectContext:(NSManagedObjectContext *)primaryMOC{
+    if (self = [super initWithNibName:@"GameEditController" bundle:nil]) {
+        editingContext = [[NSManagedObjectContext alloc] init];
+        [editingContext setPersistentStoreCoordinator: [primaryMOC persistentStoreCoordinator]];
+    }
+    return self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,6 +51,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    if (curGame)
+    {
+        gameNameTF.text = curGame.name;
+        gameMinPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.min_player];
+        gameMaxPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.max_player];        
+    }
+        
 }
 
 - (void)viewDidUnload
@@ -53,6 +71,23 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Custom Methods
+
+-(void)setCurrentGame:(Game*)aGame{
+    if (!aGame) {
+        self.title = @"Ajout Jeux";
+        aGame = [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:self.editingContext];
+    }
+    else if ([aGame managedObjectContext] != self.editingContext) {
+        self.title = @"Edition Jeu";
+        aGame = (id)[self.editingContext objectWithID:[aGame objectID]];
+    }
+    if (curGame != aGame) {
+        [curGame release];
+        curGame = [aGame retain];
+    }
 }
 
 
