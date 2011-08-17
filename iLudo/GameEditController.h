@@ -25,7 +25,7 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *gameNameTF;
 @property (nonatomic, retain) IBOutlet UITextField *gameMinPlayerTF;
-@property (nonatomic, retain) IBOutlet UITextField *gameMaxPlayer;
+@property (nonatomic, retain) IBOutlet UITextField *gameMaxPlayerTF;
 
 @property (nonatomic, retain) Game *curGame;
 

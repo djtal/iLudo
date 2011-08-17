@@ -12,7 +12,7 @@
 @implementation GameEditController
 
 @synthesize gameNameTF;
-@synthesize gameMaxPlayer;
+@synthesize gameMaxPlayerTF;
 @synthesize gameMinPlayerTF;
 @synthesize editingContext;
 
