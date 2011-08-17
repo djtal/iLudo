@@ -8,6 +8,9 @@
 
 #import "RootViewController.h"
 
+#define kNameValueTag 1
+#define kminMaxValueTag 2
+
 @interface RootViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -16,7 +19,7 @@
 
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
-
+@synthesize gameCell;
 
 - (void)viewDidLoad
 {
@@ -74,17 +77,24 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"GameCell";
+    static NSString *CellIdentifier = @"GameCustomCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"GameCustomCell" owner:self options:nil];
+        if ([nib count] > 0) {
+            cell = self.gameCell;
+        }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65;
 }
 
 /*
@@ -150,6 +160,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    self.gameCell =  nil;
 
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
@@ -159,13 +170,18 @@
 {
     [__fetchedResultsController release];
     [__managedObjectContext release];
+    [gameCell dealloc];
     [super dealloc];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"name"] description];
+    UILabel *nameLabel = (UILabel*)[cell viewWithTag:kNameValueTag];
+    nameLabel.text = [[managedObject valueForKey:@"name"] description];
+
+    UILabel *playerLabel = (UILabel*)[cell viewWithTag:kminMaxValueTag];
+    playerLabel.text = [NSString stringWithFormat:@"De %@ a %@ joueurs", [managedObject valueForKey:@"min_player"], [managedObject valueForKey:@"max_player"]];
 }
 
 - (void)insertNewObject

@@ -14,7 +14,6 @@
 @synthesize gameNameTF;
 @synthesize gameMaxPlayer;
 @synthesize gameMinPlayerTF;
-@synthesize gameDescriptionTF;
 @synthesize editingContext;
 
 
@@ -93,6 +92,8 @@
 
 - (IBAction)saveGame:(id)sender{
     curGame.name = gameNameTF.text;
+    curGame.min_player = [NSNumber numberWithInt:gameMinPlayerTF.text.integerValue];
+    curGame.max_player = [NSNumber numberWithInt:gameMaxPlayerTF.text.integerValue];
     
     NSError *anyError = nil;
     BOOL success = [[curGame managedObjectContext] save:&anyError];
@@ -111,8 +112,8 @@
 
 - (void)updateInterfaceForCurrentPerson{
     gameNameTF.text = curGame.name;
-    gameMinPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.min_player];
-    gameMaxPlayerTF.text = [NSString stringWithFormat:@"%i", curGame.max_player];    
+    gameMinPlayerTF.text = curGame.min_player.description;
+    gameMaxPlayerTF.text = curGame.max_player.description;  
 }
 
 -(void)setCurrentGame:(Game*)aGame{

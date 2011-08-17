@@ -12,7 +12,7 @@
 @interface GameEditController : UIViewController{
     
     UITextField *gameNameTF;
-    UITextField *gameDescriptionTF;
+
     UITextField *gameMinPlayerTF;
     UITextField *gameMaxPlayerTF;
     
@@ -24,7 +24,6 @@
 
 
 @property (nonatomic, retain) IBOutlet UITextField *gameNameTF;
-@property (nonatomic, retain) IBOutlet UITextField *gameDescriptionTF;
 @property (nonatomic, retain) IBOutlet UITextField *gameMinPlayerTF;
 @property (nonatomic, retain) IBOutlet UITextField *gameMaxPlayer;
 

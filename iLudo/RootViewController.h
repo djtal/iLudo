@@ -14,11 +14,13 @@
 
 @interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
     GameEditController *gameEditController;
+    UITableViewCell *gameCell;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (readonly, retain) GameEditController *gameEditController;
+@property (nonatomic, retain) IBOutlet UITableViewCell *gameCell;
 
 - (void)addNewGame;
 
