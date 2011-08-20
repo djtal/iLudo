@@ -8,15 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Game.h"
-#import "constant.h"
 
-@interface GameEditController : UIViewController{
+@interface GameEditController : UIViewController <UITableViewDataSource> {
     
-    UITextField *gameNameTF;
-
-    UITextField *gameMinPlayerTF;
-    UITextField *gameMaxPlayerTF;
-    UISegmentedControl *gameLevelSegmentedField;
+    UITextField         *gameNameTF;
+    UITextField         *gameMinPlayerTF;
+    UITextField         *gameMaxPlayerTF;
+    UISegmentedControl  *gameLevelSegmentedField;
+    UITableView         *attrtableSelect;
     
     NSManagedObjectContext *editingContext;
     
@@ -29,6 +28,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *gameMinPlayerTF;
 @property (nonatomic, retain) IBOutlet UITextField *gameMaxPlayerTF;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *gameLevelSegmentedField;
+@property (nonatomic, retain) IBOutlet UITableView *attrTableSelect;
 
 @property (nonatomic, retain) Game *curGame;
 

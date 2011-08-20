@@ -8,6 +8,9 @@
 
 #import "GameEditController.h"
 
+#define kSelectTableAttrCount   2
+#define kSectionTarget          0
+#define kSectionTime            1
 
 @implementation GameEditController
 
@@ -15,6 +18,7 @@
 @synthesize gameMaxPlayerTF;
 @synthesize gameMinPlayerTF;
 @synthesize gameLevelSegmentedField;
+@synthesize attrTableSelect;
 @synthesize editingContext;
 
 
@@ -57,7 +61,8 @@
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelGame:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
-    [cancelButton release];    
+    [cancelButton release];  
+    
     
 }
 
@@ -109,6 +114,52 @@
     [gameMinPlayerTF release];
     [gameLevelSegmentedField release];
     [super dealloc];
+}
+
+#pragma mark - Table view DataSource Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return kSelectTableAttrCount;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString* AttrCellIdentifier = @"AttrCellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:AttrCellIdentifier];
+    if (!cell) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AttrCellIdentifier] autorelease];
+    }
+    switch (indexPath.section) {
+        case kSectionTarget:
+            cell.textLabel.text = @"Target";
+            break;
+        case kSectionTime:
+            cell.textLabel.text = @"Time";
+        default:
+            break;
+    }
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    NSString *title;
+    switch (section) {
+        case kSectionTarget:
+            title =  @"Public";
+            break;
+        case kSectionTime:
+            title =  @"Duree";
+            break;
+            
+        default:
+            title = @"";
+            break;
+    }
+    return title;
 }
 
 #pragma mark - Custom Methods
