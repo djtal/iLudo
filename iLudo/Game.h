@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 
 
+
+
 @interface Game : NSManagedObject {
 @private
 }

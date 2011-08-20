@@ -14,6 +14,7 @@
 @synthesize gameNameTF;
 @synthesize gameMaxPlayerTF;
 @synthesize gameMinPlayerTF;
+@synthesize gameLevelSegmentedField;
 @synthesize editingContext;
 
 
@@ -56,7 +57,7 @@
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelGame:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
-    [cancelButton release];
+    [cancelButton release];    
     
 }
 
@@ -65,6 +66,10 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.gameLevelSegmentedField = nil;
+    self.gameMaxPlayerTF = nil;
+    self.gameMinPlayerTF = nil;
+    self.gameNameTF =  nil;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -88,12 +93,31 @@
     return YES;
 }
 
+- (IBAction)textFieldDoneEditing:(id)sender{
+    [sender resignFirstResponder];
+}
+
+- (IBAction)backgroundTap:(id)sender{
+    [gameNameTF resignFirstResponder];
+    [gameMinPlayerTF resignFirstResponder];
+    [gameMaxPlayerTF resignFirstResponder];
+}
+
+-(void)dealloc{
+    [gameNameTF release];
+    [gameMaxPlayerTF release];
+    [gameMinPlayerTF release];
+    [gameLevelSegmentedField release];
+    [super dealloc];
+}
+
 #pragma mark - Custom Methods
 
 - (IBAction)saveGame:(id)sender{
     curGame.name = gameNameTF.text;
     curGame.min_player = [NSNumber numberWithInt:gameMinPlayerTF.text.integerValue];
     curGame.max_player = [NSNumber numberWithInt:gameMaxPlayerTF.text.integerValue];
+    curGame.level = [NSNumber numberWithInt:[gameLevelSegmentedField selectedSegmentIndex]];
     
     NSError *anyError = nil;
     BOOL success = [[curGame managedObjectContext] save:&anyError];
@@ -114,6 +138,7 @@
     gameNameTF.text = curGame.name;
     gameMinPlayerTF.text = curGame.min_player.description;
     gameMaxPlayerTF.text = curGame.max_player.description;  
+    gameLevelSegmentedField.selectedSegmentIndex = curGame.level.integerValue;
 }
 
 -(void)setCurrentGame:(Game*)aGame{
@@ -130,7 +155,6 @@
         curGame = [aGame retain];
     }
 }
-
 
 
 @end

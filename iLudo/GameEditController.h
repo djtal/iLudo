@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Game.h"
+#import "constant.h"
 
 @interface GameEditController : UIViewController{
     
@@ -15,6 +16,7 @@
 
     UITextField *gameMinPlayerTF;
     UITextField *gameMaxPlayerTF;
+    UISegmentedControl *gameLevelSegmentedField;
     
     NSManagedObjectContext *editingContext;
     
@@ -26,6 +28,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *gameNameTF;
 @property (nonatomic, retain) IBOutlet UITextField *gameMinPlayerTF;
 @property (nonatomic, retain) IBOutlet UITextField *gameMaxPlayerTF;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *gameLevelSegmentedField;
 
 @property (nonatomic, retain) Game *curGame;
 
@@ -34,4 +37,6 @@
 
 - (id)iniWithPrimaryManagedObjectContext:(NSManagedObjectContext*)primaryMOC;
 - (void)updateInterfaceForCurrentPerson;
+- (IBAction)textFieldDoneEditing:(id)sender;
+- (IBAction)backgroundTap:(id)sender;
 @end
