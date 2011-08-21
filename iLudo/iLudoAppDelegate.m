@@ -118,6 +118,7 @@
         __managedObjectContext = [[NSManagedObjectContext alloc] init];
         [__managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
+    [self preLoadBaseDataStore:__managedObjectContext];
     return __managedObjectContext;
 }
 
@@ -132,7 +133,7 @@
         return __managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"iLudo" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
+    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];   
     return __managedObjectModel;
 }
 
@@ -202,6 +203,31 @@
     if ([notification object] != self.managedObjectContext) {
         [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
     }
+}
+
+- (void)preLoadBaseDataStore:(NSManagedObjectContext*)moc{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"GameTarget" inManagedObjectContext:moc];
+    [fetchRequest setEntity:entityDescription];
+     
+    NSError *error = nil;
+    NSInteger count = [moc countForFetchRequest:fetchRequest error:&error];
+    if (!error)
+    {
+        if (count == 0) {
+            NSManagedObject *entity;
+            NSArray *target = [[NSArray alloc] initWithObjects:@"Jeune Enfant", @"Enfant", @"Tous public", @"Casual", @"Gros joueurs", nil];
+            for (NSString* name in target) {
+                entity = [NSEntityDescription insertNewObjectForEntityForName:[entityDescription name] inManagedObjectContext:moc];
+                [entity setValue:name forKey:@"name"];
+            }
+            [moc save:&error];
+        }
+    }
+    
+                                              
+    
+    
 }
 
 @end

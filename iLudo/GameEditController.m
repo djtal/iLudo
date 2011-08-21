@@ -20,7 +20,8 @@
 @synthesize gameLevelSegmentedField;
 @synthesize attrTableSelect;
 @synthesize editingContext;
-
+@synthesize selectViewController;
+@synthesize curGame;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -113,6 +114,7 @@
     [gameMaxPlayerTF release];
     [gameMinPlayerTF release];
     [gameLevelSegmentedField release];
+    [attrTableSelect release];
     [super dealloc];
 }
 
@@ -131,13 +133,14 @@
     }
     switch (indexPath.section) {
         case kSectionTarget:
-            cell.textLabel.text = @"Target";
+            cell.textLabel.text = @"";
             break;
         case kSectionTime:
             cell.textLabel.text = @"Time";
         default:
             break;
     }
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
 }
 
@@ -149,7 +152,8 @@
     NSString *title;
     switch (section) {
         case kSectionTarget:
-            title =  @"Public";
+            
+            title =  [curGame valueForKeyPath:@"target.name"];
             break;
         case kSectionTime:
             title =  @"Duree";
@@ -162,7 +166,33 @@
     return title;
 }
 
+#pragma mark - tableView Delegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self showSelectViewController];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    [self showSelectViewController];
+}
+
+
+
+
+
 #pragma mark - Custom Methods
+
+- (void)showSelectViewController{
+    SelectViewController *viewController;
+    if (!self.selectViewController) {
+        viewController = [[SelectViewController alloc] initWithStyle:UITableViewStylePlain ];
+        viewController.curGame = self.curGame;
+        viewController.curGame = curGame;
+        self.selectViewController = viewController;
+        [viewController release];
+    }
+    [self.navigationController pushViewController:self.selectViewController animated:YES];  
+}
 
 - (IBAction)saveGame:(id)sender{
     curGame.name = gameNameTF.text;

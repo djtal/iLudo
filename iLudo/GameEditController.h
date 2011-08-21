@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "Game.h"
+#import "SelectViewController.h"
 
-@interface GameEditController : UIViewController <UITableViewDataSource> {
+@interface GameEditController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
     UITextField         *gameNameTF;
     UITextField         *gameMinPlayerTF;
     UITextField         *gameMaxPlayerTF;
     UISegmentedControl  *gameLevelSegmentedField;
-    UITableView         *attrtableSelect;
+    UITableView         *attrTableSelect;
     
     NSManagedObjectContext *editingContext;
+    
+    SelectViewController *selectViewController;
     
     Game *curGame;
     
@@ -31,7 +34,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *attrTableSelect;
 
 @property (nonatomic, retain) Game *curGame;
-
+@property (nonatomic, retain) SelectViewController *selectViewController;
 @property (nonatomic, retain) NSManagedObjectContext *editingContext;
 
 
@@ -39,4 +42,5 @@
 - (void)updateInterfaceForCurrentPerson;
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
+- (void)showSelectViewController;
 @end
