@@ -224,10 +224,24 @@
             [moc save:&error];
         }
     }
-    
-                                              
-    
-    
+    [fetchRequest release];
+    fetchRequest = [[NSFetchRequest alloc] init];
+    entityDescription = [NSEntityDescription entityForName:@"GameTime" inManagedObjectContext:moc];
+    [fetchRequest setEntity:entityDescription];
+    count = [moc countForFetchRequest:fetchRequest error:&error];
+    if (!error)
+    {
+        if (count == 0) {
+            NSManagedObject *entity;
+            NSArray *target = [[NSArray alloc] initWithObjects: @"< 30min", @"Entre 30min/1h", @"Entre 1h et 1h30", @"> 1h30", nil];
+            for (NSString* name in target) {
+                entity = [NSEntityDescription insertNewObjectForEntityForName:[entityDescription name] inManagedObjectContext:moc];
+                [entity setValue:name forKey:@"name"];
+            }
+            [moc save:&error];
+        }
+    }
+    [fetchRequest release];
 }
 
 @end

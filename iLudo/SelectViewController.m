@@ -59,7 +59,7 @@
 	NSManagedObjectContext *context = [curGame managedObjectContext];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:[NSEntityDescription entityForName:@"GameTarget" inManagedObjectContext:context]];
+	[fetchRequest setEntity:[NSEntityDescription entityForName:@"GameTime" inManagedObjectContext:context]];
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
 	[fetchRequest setSortDescriptors:sortDescriptors];
