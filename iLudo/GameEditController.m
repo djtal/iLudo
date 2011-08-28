@@ -78,12 +78,13 @@
     self.gameNameTF =  nil;
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self updateInterfaceForCurrentPerson];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
+    [self updateCurGameFromView];
     [super viewDidDisappear:animated];
 
 }
@@ -186,7 +187,6 @@
     SelectViewController *viewController;
     if (!self.selectViewController) {
         viewController = [[SelectViewController alloc] initWithStyle:UITableViewStylePlain ];
-        viewController.curGame = self.curGame;
         self.selectViewController = viewController;
         [viewController release];
     }
@@ -206,11 +206,15 @@
     [self.navigationController pushViewController:self.selectViewController animated:YES];  
 }
 
-- (IBAction)saveGame:(id)sender{
+-(void)updateCurGameFromView{
     curGame.name = gameNameTF.text;
     curGame.min_player = [NSNumber numberWithInt:gameMinPlayerTF.text.integerValue];
     curGame.max_player = [NSNumber numberWithInt:gameMaxPlayerTF.text.integerValue];
     curGame.level = [NSNumber numberWithInt:[gameLevelSegmentedField selectedSegmentIndex]];
+}
+
+- (IBAction)saveGame:(id)sender{
+    [self updateCurGameFromView];
     
     NSError *anyError = nil;
     BOOL success = [[curGame managedObjectContext] save:&anyError];

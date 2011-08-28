@@ -40,6 +40,7 @@
 
 - (id)iniWithPrimaryManagedObjectContext:(NSManagedObjectContext*)primaryMOC;
 - (void)updateInterfaceForCurrentPerson;
+- (void)updateCurGameFromView;
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
 - (void)showSelectViewController:(NSIndexPath*)indexPath;

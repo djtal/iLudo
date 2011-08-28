@@ -14,12 +14,14 @@
     NSArray *selectItems;
     NSEntityDescription *entity;
     NSString *attribute;
+    NSString *localiedName;
 }
 
 @property (nonatomic, retain) Game* curGame;
 @property (nonatomic, retain) NSArray *selectItems;
 @property (nonatomic, retain) NSString *attribute;
 @property (nonatomic, retain) NSEntityDescription *entity;
+@property (nonatomic, retain) NSString *localizedName;
 
 -(void)setRelationToSelect:(NSString*)relationName;
 

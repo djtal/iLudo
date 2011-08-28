@@ -15,6 +15,7 @@
 @synthesize selectItems;
 @synthesize attribute;
 @synthesize entity;
+@synthesize localizedName;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -78,6 +79,10 @@
         [sortDescriptor release];
         [sortDescriptors release];
         [self.tableView reloadData];
+        
+        NSString *title = [[NSString alloc] initWithFormat:@"Choix %@", self.localizedName];
+        self.title = title;
+        [title release];
 
     }
 }
@@ -181,14 +186,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+
     NSManagedObject *relationValueSet;
     relationValueSet = [selectItems objectAtIndex:indexPath.row];
     if (relationValueSet != NULL)
@@ -205,9 +203,15 @@
     {
         self.attribute = relationName;
         self.entity = [relationDescription destinationEntity];
+        NSString *name =  [[entity userInfo] objectForKey:@"UIName"];
+        if (name != NULL)
+        {
+            self.localizedName =name;
+            [name release];
+        }
     }
     else
-        NSLog(@"no ralation named %@ in object", relationName);
+        NSLog(@"no relation named %@ in object", relationName);
     
 }
 
