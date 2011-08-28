@@ -13,7 +13,8 @@
 
 @synthesize curGame;
 @synthesize selectItems;
-
+@synthesize attribute;
+@synthesize entity;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -56,21 +57,25 @@
 {
     [super viewWillAppear:animated];
     
-	NSManagedObjectContext *context = [curGame managedObjectContext];
-	
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:[NSEntityDescription entityForName:@"GameTime" inManagedObjectContext:context]];
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
-	[fetchRequest setSortDescriptors:sortDescriptors];
-	
-	NSError *error = nil;
-	NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
-	self.selectItems = items;
-	
-	[fetchRequest release];
-	[sortDescriptor release];
-	[sortDescriptors release];
+	if (entity != NULL)
+    {
+        NSManagedObjectContext *context = [curGame managedObjectContext];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        [fetchRequest setEntity:entity];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
+        [fetchRequest setSortDescriptors:sortDescriptors];
+        
+        NSError *error = nil;
+        NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
+        self.selectItems = items;
+        [fetchRequest release];
+        [sortDescriptor release];
+        [sortDescriptors release];
+        [self.tableView reloadData];
+
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -111,14 +116,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SelectCell";
+    NSManagedObject *relationCellValue;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+    relationCellValue = [selectItems objectAtIndex:indexPath.row];
     // Configure the cell...
-    cell.textLabel.text = [[selectItems objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.textLabel.text = [relationCellValue valueForKey:@"name"];
+    if (curGame != NULL && [curGame valueForKey:attribute] == relationCellValue) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     return cell;
 }
 
@@ -173,6 +182,22 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+}
+
+#pragma mark custom methods
+
+- (void)setRelationToSelect:(NSString *)relationName{
+    NSEntityDescription *gameEntity = [curGame entity];
+    NSDictionary *relationships = [gameEntity relationshipsByName];
+    NSRelationshipDescription *relationDescription = [relationships objectForKey:relationName];
+    if (relationDescription != NULL)
+    {
+        self.attribute = relationName;
+        self.entity = [relationDescription destinationEntity];
+    }
+    else
+        NSLog(@"no ralation named %@ in object", relationName);
+    
 }
 
 @end

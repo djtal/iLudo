@@ -169,11 +169,11 @@
 #pragma mark - tableView Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self showSelectViewController];
+    [self showSelectViewController: indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    [self showSelectViewController];
+    [self showSelectViewController: indexPath];
 }
 
 
@@ -182,14 +182,26 @@
 
 #pragma mark - Custom Methods
 
-- (void)showSelectViewController{
+- (void)showSelectViewController:(NSIndexPath*)indexPath{
     SelectViewController *viewController;
     if (!self.selectViewController) {
         viewController = [[SelectViewController alloc] initWithStyle:UITableViewStylePlain ];
         viewController.curGame = self.curGame;
-        viewController.curGame = curGame;
         self.selectViewController = viewController;
         [viewController release];
+    }
+    self.selectViewController.curGame = curGame;
+    switch ([indexPath section]) {
+        case kSectionTime:
+            [self.selectViewController setRelationToSelect:@"time"];
+            break;
+            
+        case kSectionTarget:
+            [self.selectViewController setRelationToSelect:@"target"];
+            break;
+            
+        default:
+            break;
     }
     [self.navigationController pushViewController:self.selectViewController animated:YES];  
 }

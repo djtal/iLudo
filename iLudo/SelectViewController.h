@@ -12,12 +12,16 @@
 @interface SelectViewController : UITableViewController  {
     Game *curGame;
     NSArray *selectItems;
-    int     attributeToSelect;
+    NSEntityDescription *entity;
+    NSString *attribute;
 }
 
 @property (nonatomic, retain) Game* curGame;
 @property (nonatomic, retain) NSArray *selectItems;
-@property (nonatomic, readwrite) int attributeToSelect;
+@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, retain) NSEntityDescription *entity;
+
+-(void)setRelationToSelect:(NSString*)relationName;
 
 
 

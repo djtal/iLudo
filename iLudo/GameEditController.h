@@ -42,5 +42,5 @@
 - (void)updateInterfaceForCurrentPerson;
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
-- (void)showSelectViewController;
+- (void)showSelectViewController:(NSIndexPath*)indexPath;
 @end
