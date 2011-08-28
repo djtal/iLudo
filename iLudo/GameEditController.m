@@ -133,10 +133,10 @@
     }
     switch (indexPath.section) {
         case kSectionTarget:
-            cell.textLabel.text = @"";
+            cell.textLabel.text =  [curGame valueForKeyPath:@"target.name"];
             break;
         case kSectionTime:
-            cell.textLabel.text = @"Time";
+            cell.textLabel.text =  [curGame valueForKeyPath:@"time.name"];;
         default:
             break;
     }
@@ -153,7 +153,7 @@
     switch (section) {
         case kSectionTarget:
             
-            title =  [curGame valueForKeyPath:@"target.name"];
+            title = @"Public";
             break;
         case kSectionTime:
             title =  @"Duree";
@@ -232,6 +232,7 @@
     gameMinPlayerTF.text = curGame.min_player.description;
     gameMaxPlayerTF.text = curGame.max_player.description;  
     gameLevelSegmentedField.selectedSegmentIndex = curGame.level.integerValue;
+    [self.attrTableSelect reloadData];
 }
 
 -(void)setCurrentGame:(Game*)aGame{

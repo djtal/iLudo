@@ -51,6 +51,10 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.entity = nil;
+    self.selectItems = nil;
+    self.curGame = nil;
+    self.attribute = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -116,18 +120,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SelectCell";
-    NSManagedObject *relationCellValue;
+    NSManagedObject *relationCellValue, *relationValue;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     relationCellValue = [selectItems objectAtIndex:indexPath.row];
+    relationValue = [curGame valueForKey:attribute];
     // Configure the cell...
     cell.textLabel.text = [relationCellValue valueForKey:@"name"];
-    if (curGame != NULL && [curGame valueForKey:attribute] == relationCellValue) {
+    if (curGame != NULL && [relationValue isEqual:relationCellValue]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
+    else
+        cell.accessoryType = UITableViewCellAccessoryNone;
     return cell;
 }
 
@@ -182,6 +189,10 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    NSManagedObject *relationValueSet;
+    relationValueSet = [selectItems objectAtIndex:indexPath.row];
+    if (relationValueSet != NULL)
+        [curGame setValue:relationValueSet forKey:attribute];
 }
 
 #pragma mark custom methods
